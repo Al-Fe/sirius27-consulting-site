@@ -130,7 +130,7 @@
       padding-top: 76px;
       padding-bottom: 42px;
       color: #fff;
-      background: var(--navy) url("assets/brand-sirius-pattern.png") center / 760px auto repeat;
+      background: var(--navy) url("assets/brand-sirius-pattern-seamless.png") center / 760px auto repeat;
     }
     .hero::before {
       content: "";
@@ -249,23 +249,40 @@
     .service-card .btn { margin-top: auto; align-self: flex-start; }
     .service-card.featured .btn-outline { color: var(--navy); background: var(--sky); border-color: var(--sky); }
 
+    .pricing { background: var(--paper); }
+    .pricing-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(460px, 1.1fr); align-items: start; gap: 48px; }
+    .pricing-copy .section-heading { margin-bottom: 30px; }
+    .pricing-factors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .pricing-factor { min-width: 0; padding: 18px; background: var(--canvas); border-top: 3px solid var(--sky); border-radius: 0 0 10px 10px; }
+    .pricing-factor strong { display: block; margin-bottom: 7px; color: var(--navy); font-size: 15px; line-height: 1.25; }
+    .pricing-factor p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .pricing-result { margin-top: 18px; padding: 28px; color: #fff; background: var(--navy); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .pricing-result h3 { margin-bottom: 16px; color: #fff; }
+    .pricing-result ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .pricing-result li { position: relative; padding-left: 20px; color: rgba(255,255,255,.82); font-size: 14px; }
+    .pricing-result li::before { content: ""; position: absolute; top: 10px; left: 0; width: 7px; height: 7px; background: var(--sky); border-radius: 50%; }
+    .pricing-saving { margin: 20px 0 0; padding-top: 18px; color: #fff; border-top: 1px solid rgba(255,255,255,.16); font-size: 14px; }
+    .pricing-saving strong { color: var(--sky); }
+    .pricing-result-note { margin: 12px 0 0; color: rgba(255,255,255,.64); font-size: 12px; }
+    .pricing-form { border-top: 6px solid var(--sky); }
+    .pricing-form-badge { display: inline-block; margin-bottom: 14px; padding: 5px 10px; color: var(--sky-dark); background: var(--sky-soft); border-radius: 999px; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .pricing-form h3 { margin-bottom: 10px; }
+    .pricing-microcopy { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+    #cost-message { min-height: 112px; }
+    #cost-estimate-form .form-status:empty { display: none; }
+
     .report-section { background: var(--navy); color: #fff; }
     .report-section .section-kicker { color: var(--sky); }
     .report-section .section-heading h2 { color: #fff; }
     .report-section .section-heading p { color: rgba(255,255,255,.76); }
-    .report-layout { display: grid; grid-template-columns: 1.15fr .85fr; align-items: start; gap: 40px; }
-    .report-showcase { padding: 28px; background: #fff; border-radius: var(--radius); box-shadow: 0 24px 60px rgba(0,0,0,.24); }
-    .report-label { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 22px; }
-    .report-label h3 { margin: 0; }
-    .report-label span { color: var(--muted); font-size: 13px; text-align: right; }
-    .report-pages { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
-    .report-pages figure { margin: 0; }
-    .report-pages img { width: 100%; border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(23,39,66,.11); }
-    .report-pages figcaption { padding-top: 8px; color: var(--muted); font-size: 12px; }
-    .report-download { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
-    .report-download p { margin: 0; color: var(--muted); font-size: 13px; }
+    .report-layout { display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch; gap: 40px; }
+    .report-showcase { position: relative; min-width: 0; min-height: 0; margin: 0; }
+    .report-frame { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; min-width: 0; min-height: 0; }
+    .report-frame img { box-sizing: border-box; display: block; width: auto; max-width: 100%; height: auto; max-height: 100%; border: 6px solid #fff; border-radius: var(--radius); box-shadow: 0 24px 60px rgba(0,0,0,.24); }
+    .report-pdf-button { position: absolute; right: 60px; bottom: 22px; z-index: 1; max-width: calc(100% - 120px); white-space: nowrap; box-shadow: 0 12px 30px rgba(0,0,0,.32); }
 
     .form-card { padding: 32px; color: var(--ink); background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .report-layout > .form-card { padding-bottom: 24px; }
     .form-card h3 { margin-bottom: 10px; }
     .form-intro { margin-bottom: 24px; color: var(--muted); font-size: 14px; }
     .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -282,12 +299,15 @@
       border-radius: 7px;
     }
     .field textarea { min-height: 104px; resize: vertical; }
+    #qr-message { min-height: 150px; }
     .field input[readonly] { background: var(--canvas); }
     .contact-choice-note { margin: -8px 0 0; color: var(--muted); font-size: 12px; }
     .consent { display: grid; grid-template-columns: 20px 1fr; align-items: start; gap: 10px; color: var(--muted); font-size: 12px; }
     .consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--navy); }
     .form-actions { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
+    .form-actions .btn[hidden] { display: none; }
     .form-status { min-height: 24px; margin-top: 14px; font-size: 13px; font-weight: 700; }
+    #quick-report-form .form-status:empty { display: none; }
     .form-status.error { color: var(--danger); }
     .form-status.success { color: var(--success); }
     .fallback { margin-top: 14px; padding: 14px; background: #fff6e7; border: 1px solid #ead09a; border-radius: 8px; }
@@ -339,7 +359,7 @@
     .partner.partner-dark { background: var(--navy); border-color: var(--navy); }
     .partner img { max-width: 150px; max-height: 52px; object-fit: contain; }
 
-    .contact { color: #fff; background: var(--navy-2) url("assets/brand-sirius-pattern.png") center / 760px auto repeat; }
+    .contact { color: #fff; background: var(--navy-2) url("assets/brand-sirius-pattern-seamless.png") center / 760px auto repeat; }
     .contact-layout { display: grid; grid-template-columns: .82fr 1.18fr; align-items: start; gap: 64px; }
     .contact-copy { padding-top: 20px; }
     .contact-copy .section-kicker { color: var(--sky); }
@@ -379,7 +399,7 @@
     @media (max-width: 1100px) {
       .header-cta { display: none; }
       .site-nav { gap: 18px; }
-      .hero-grid, .about-grid, .report-layout, .contact-layout { gap: 36px; }
+      .hero-grid, .about-grid, .pricing-layout, .report-layout, .contact-layout { gap: 36px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .partner-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -406,7 +426,9 @@
       .site-nav.open { display: flex; }
       .site-nav a { padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 16px; }
       .hero { padding-top: 46px; }
-      .hero-grid, .about-grid, .report-layout, .contact-layout { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .pricing-layout, .report-layout, .contact-layout { grid-template-columns: 1fr; }
+      .report-frame { position: relative; inset: auto; width: 100%; }
+      .report-frame img { width: 100%; height: auto; max-height: none; }
       .hero-copy { padding: 20px 0 4px; }
       .hero-media { max-width: 640px; }
       .hero-stats { margin-top: 34px; }
@@ -430,12 +452,13 @@
       .hero-stats { grid-template-columns: 1fr; }
       .stat { padding: 20px 0; }
       .stat + .stat { padding-left: 0; border-top: 1px solid rgba(255,255,255,.18); border-left: 0; }
-      .advantage-list, .services-grid, .form-grid, .process-grid, .report-pages { grid-template-columns: 1fr; }
+      .advantage-list, .services-grid, .pricing-factors, .form-grid, .process-grid { grid-template-columns: 1fr; }
       .service-card { min-height: 0; }
       .field.full { grid-column: auto; }
       .process-step + .process-step, .process-step:nth-child(3) { border-top: 0; border-left: 0; }
-      .report-showcase, .form-card { padding: 20px; }
-      .report-label, .report-download { align-items: flex-start; flex-direction: column; }
+      .form-card { padding: 20px; }
+      .pricing-result { padding: 22px 20px; }
+      .report-pdf-button { right: 16px; bottom: 16px; max-width: calc(100% - 32px); }
       .partner-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { align-items: flex-start; flex-direction: column; }
@@ -462,10 +485,8 @@
       <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <a href="#about">О нас</a>
         <a href="#services">Услуги</a>
+        <a href="#pricing">Стоимость</a>
         <a href="#report">Рабочий отчёт</a>
-        <a href="#projects">Объекты</a>
-        <a href="#partners">Партнёры</a>
-        <a href="#contact">Контакты</a>
       </nav>
       <a class="btn btn-primary header-cta" href="#contact">Обсудить проект</a>
     </div>
@@ -542,50 +563,99 @@
         </div>
         <div class="services-grid">
           <article class="service-card featured reveal">
-            <span class="service-number">01 / 09</span><h3>Экспресс-анализ</h3>
-            <ul><li>Проверка выбранного раздела проекта</li><li>Критические ошибки и риски</li><li>Рабочий отчёт с замечаниями и рекомендациями</li><li>Срок — один рабочий день</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="express_analysis" data-service-title="Экспресс-анализ">Оставить заявку</button>
+            <span class="service-number">01 / 06</span><h3>Экспресс-аудит</h3>
+            <ul><li>Загрузка проекта в систему</li><li>Автоматическая проверка на типовые ошибки</li><li>Краткий отчёт с критическими замечаниями</li><li>Срок — от 1 рабочего дня</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="express_audit">Оставить заявку</button>
           </article>
           <article class="service-card reveal">
-            <span class="service-number">02 / 09</span><h3>Полный технический аудит</h3>
-            <ul><li>Проверка инженером-экспертом</li><li>Сопоставление разделов документации</li><li>Проверка требований СП и ГОСТ</li><li>Расчёты и предложения по исправлению</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="full_audit" data-service-title="Полный технический аудит">Запросить оценку</button>
+            <span class="service-number">02 / 06</span><h3>Полный технический аудит</h3>
+            <ul><li>Проверка инженером-экспертом</li><li>Междокументный анализ</li><li>Нормативная проверка по СП и ГОСТ</li><li>Расчёты и предложения по исправлению</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="full_audit">Запросить услугу</button>
           </article>
           <article class="service-card reveal">
-            <span class="service-number">03 / 09</span><h3>Подготовка к экспертизе</h3>
-            <ul><li>Проверка типовых рисков отклонения</li><li>Формирование замечаний заранее</li><li>Повторная проверка после исправлений</li><li>Сопровождение ответов экспертизе</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="expertise_preparation" data-service-title="Подготовка к экспертизе">Запросить оценку</button>
+            <span class="service-number">03 / 06</span><h3>Адаптация проекта</h3>
+            <ul><li>Подбор аналогов с сохранением функционала</li><li>Проверка спецификации на ошибки</li><li>Корректировка под новые условия эксплуатации</li><li>Снижение стоимости проекта без потери качества</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="project_adaptation">Запросить услугу</button>
           </article>
           <article class="service-card reveal">
-            <span class="service-number">04 / 09</span><h3>Адаптация проекта</h3>
-            <ul><li>Замена оборудования с сохранением функций</li><li>Импортозамещение с обоснованием</li><li>Изменение производителя</li><li>Новые условия эксплуатации</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="project_adaptation" data-service-title="Адаптация проекта">Запросить оценку</button>
+            <span class="service-number">04 / 06</span><h3>Независимая проверка подрядчика</h3>
+            <ul><li>Соответствие закупаемого оборудования проекту</li><li>Проверка необоснованных замен</li><li>Сверка фактических объёмов работ</li><li>Анализ завышенной спецификации</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="contractor_audit">Запросить услугу</button>
           </article>
           <article class="service-card reveal">
-            <span class="service-number">05 / 09</span><h3>Value engineering</h3>
-            <ul><li>Снижение стоимости без потери качества</li><li>Сокращение номенклатуры оборудования</li><li>Оптимизация архитектуры систем</li><li>Расчёт экономического эффекта</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="value_engineering" data-service-title="Value engineering">Запросить оценку</button>
+            <span class="service-number">05 / 06</span><h3>Аудит исполнительной документации</h3>
+            <ul><li>Соответствие проекту и фактическим изменениям</li><li>Полнота комплектов документов</li><li>Проверка кабельных журналов</li><li>Проверка исполнительных схем</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="as_built_audit">Запросить услугу</button>
           </article>
           <article class="service-card reveal">
-            <span class="service-number">06 / 09</span><h3>Восстановление документации</h3>
-            <ul><li>Работа с PDF и сканами</li><li>Исполнительные схемы и чертежи</li><li>Разрозненные комплекты документов</li><li>Фактическое состояние объекта</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="document_recovery" data-service-title="Восстановление документации">Запросить оценку</button>
+            <span class="service-number">06 / 06</span><h3>Инженерный анализ</h3>
+            <ul><li>Проверка типовых рисков отклонения</li><li>Сокращение номенклатуры оборудования</li><li>Оптимизация архитектуры систем</li><li>Расчёт экономического эффекта</li></ul>
+            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="engineering_analysis">Запросить услугу</button>
           </article>
-          <article class="service-card reveal">
-            <span class="service-number">07 / 09</span><h3>Независимая проверка подрядчика</h3>
-            <ul><li>Соответствие оборудования проекту</li><li>Проверка необоснованных замен</li><li>Сверка фактических объёмов работ</li><li>Анализ завышенной спецификации</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="contractor_audit" data-service-title="Независимая проверка подрядчика">Запросить оценку</button>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-number">08 / 09</span><h3>Аудит перед закупкой</h3>
-            <ul><li>Проверка спецификации на ошибки</li><li>Исключение недоступных позиций</li><li>Проверка доступности оборудования</li><li>Поиск допустимых аналогов</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="procurement_audit" data-service-title="Аудит перед закупкой">Запросить оценку</button>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-number">09 / 09</span><h3>Аудит исполнительной документации</h3>
-            <ul><li>Соответствие проекту и изменениям</li><li>Полнота комплектов документов</li><li>Проверка кабельных журналов</li><li>Проверка исполнительных схем</li></ul>
-            <button class="btn btn-outline btn-small service-request" type="button" data-service-code="as_built_audit" data-service-title="Аудит исполнительной документации">Запросить оценку</button>
-          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-layout">
+          <div class="pricing-copy">
+            <div class="section-heading reveal">
+              <span class="section-kicker">Стоимость услуг</span>
+              <h2 id="pricing-title">Понятная стоимость до начала работ</h2>
+              <p>Каждый проект уникален и стоимость его анализа зависит от множества факторов. Мы учитываем состав и состояние документации, сложность инженерных решений, формат исходных материалов, разнородность оборудования, глубину проверки и требуемый срок.</p>
+            </div>
+
+            <div class="pricing-factors reveal" aria-label="Факторы, влияющие на стоимость">
+              <article class="pricing-factor"><strong>Состав и объём</strong><p>Количество разделов, листов, расчётов, спецификаций и исходных файлов.</p></article>
+              <article class="pricing-factor"><strong>Формат документов</strong><p>PDF, DWG, BIM-модели, сканы или разрозненный комплект из разных источников.</p></article>
+              <article class="pricing-factor"><strong>Сложность проекта</strong><p>Нестандартные решения, взаимосвязи систем и необходимость проверки смежных разделов.</p></article>
+              <article class="pricing-factor"><strong>Состав оборудования</strong><p>Количество систем, производителей, аналогов и вариантов технических решений.</p></article>
+              <article class="pricing-factor"><strong>Стадия и состояние</strong><p>П, Р или исполнительная документация, полнота комплекта и качество исходных данных.</p></article>
+              <article class="pricing-factor"><strong>Срок и результат</strong><p>Срочность, этапность, глубина отчёта и сопровождение после передачи замечаний.</p></article>
+            </div>
+
+            <aside class="pricing-result reveal" aria-labelledby="pricing-result-title">
+              <h3 id="pricing-result-title">Что вы получите бесплатно</h3>
+              <ul>
+                <li>рекомендуемый формат и достаточную глубину проверки;</li>
+                <li>предварительный состав работ и ожидаемый результат;</li>
+                <li>ориентировочный срок выполнения;</li>
+                <li>диапазон стоимости и перечень данных для точного предложения.</li>
+              </ul>
+              <p class="pricing-saving"><strong>Наш опыт — ваша экономия.</strong> Предложим достаточный объём проверки без лишних работ и заранее объясним, за что вы платите.</p>
+              <p class="pricing-result-note">Полный комплект проектной документации на этом этапе не требуется. Дополнительные работы выполняются только после согласования.</p>
+            </aside>
+          </div>
+
+          <div class="form-card pricing-form reveal">
+            <span class="pricing-form-badge">Бесплатная предварительная оценка</span>
+            <h3>Получить расчёт стоимости</h3>
+            <p class="form-intro">Ответьте на несколько вопросов. Инженер оценит задачу и отправит на email ориентировочный диапазон стоимости и срока. Если варианты ответов не описывают вашу ситуацию, выберите пункт «Не уверен» и укажите в форме телефон, чтобы наш сотрудник смог в личной беседе уточнить состав услуги для расчёта.</p>
+            <form class="lead-form" id="cost-estimate-form" action="/api/leads" method="post" data-form-kind="cost_estimate">
+              <div class="honeypot" aria-hidden="true"><label>Не заполняйте <input name="website" tabindex="-1" autocomplete="off"></label></div>
+              <div class="form-grid">
+                <div class="field"><label for="cost-name">Имя *</label><input id="cost-name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="cost-company">Компания</label><input id="cost-company" name="company" autocomplete="organization"></div>
+                <div class="field"><label for="cost-email">Email для расчёта *</label><input id="cost-email" name="email" type="email" autocomplete="email" required></div>
+                <div class="field"><label for="cost-phone">Телефон</label><input id="cost-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+                <p class="contact-choice-note field full">Расчёт отправим на указанный email. Телефон используем только при необходимости уточнить задачу.</p>
+                <div class="field full"><label for="cost-service">Какая задача требуется? *</label><select id="cost-service" name="service_code" required><option value="">Выберите услугу</option><option value="express_audit">Экспресс-аудит</option><option value="full_audit">Полный технический аудит</option><option value="project_adaptation">Адаптация проекта</option><option value="contractor_audit">Независимая проверка подрядчика</option><option value="as_built_audit">Аудит исполнительной документации</option><option value="engineering_analysis">Инженерный анализ</option><option value="recommendation">Не уверен — нужна рекомендация</option></select></div>
+                <div class="field"><label for="cost-type">Тип объекта</label><input id="cost-type" name="project_type" placeholder="Промышленный, жилой, общественный"></div>
+                <div class="field"><label for="cost-stage">Стадия документации</label><select id="cost-stage" name="stage"><option value="">Выберите</option><option>П</option><option>Р</option><option>П + Р</option><option>Исполнительная документация</option><option>Несколько стадий</option><option>Не уверен</option></select></div>
+                <div class="field"><label for="cost-format">Формат документов</label><select id="cost-format" name="document_format"><option value="">Выберите</option><option>PDF</option><option>PDF и DWG</option><option>DWG, Revit или BIM</option><option>Сканы и изображения</option><option>Смешанный комплект</option><option>Не уверен</option></select></div>
+                <div class="field"><label for="cost-volume">Объём комплекта *</label><input id="cost-volume" name="volume" required placeholder="Например, 3 раздела, 180 листов"></div>
+                <div class="field"><label for="cost-equipment">Состав оборудования</label><select id="cost-equipment" name="equipment_variety"><option value="">Выберите</option><option>Преимущественно один производитель</option><option>Несколько производителей и систем</option><option>Сильно разнородный состав</option><option>Требуется подбор аналогов</option><option>Не уверен</option></select></div>
+                <div class="field"><label for="cost-deadline">Когда нужен результат работ?</label><select id="cost-deadline" name="deadline"><option value="">Срок не определён</option><option>До 3 рабочих дней</option><option>До недели</option><option>До двух недель</option><option>Срок более двух недель</option></select></div>
+                <div class="field full"><label for="cost-message">Что особенно важно учесть?</label><textarea id="cost-message" name="message" placeholder="Экспертиза, закупка, замена оборудования, начало монтажа или другие обстоятельства"></textarea></div>
+                <div class="field full"><label class="consent"><input name="consent" type="checkbox" value="accepted" required><span>Согласен на обработку указанных контактных данных для подготовки и отправки расчёта. *</span></label></div>
+              </div>
+              <div class="form-actions"><button class="btn btn-dark" type="submit">Получить расчёт стоимости</button></div>
+              <p class="pricing-microcopy">Предварительная оценка бесплатна и ни к чему не обязывает. После просмотра материалов состав и стоимость работ фиксируются до их начала.</p>
+              <div class="form-status" role="status" aria-live="polite"></div>
+              <div class="fallback" hidden><p>Отправка через форму сейчас недоступна. Отправьте подготовленный запрос по электронной почте.</p><a class="btn btn-outline btn-small fallback-email" href="mailto:info@sirius27.ru">Открыть письмо</a></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -598,21 +668,18 @@
           <p>Замечания оформляются так, чтобы заказчик и проектировщик могли сразу приступить к исправлениям. В публичной версии обезличены сведения о заказчике, объекте и комплекте документации.</p>
         </div>
         <div class="report-layout">
-          <article class="report-showcase reveal" aria-labelledby="report-preview-title">
-            <div class="report-label"><h3 id="report-preview-title">Рабочий отчёт</h3><span>Публичная обезличенная версия</span></div>
-            <div class="report-pages">
-              <figure><a href="assets/report-cover.png" target="_blank" rel="noopener"><img src="assets/report-cover.png" width="1191" height="1684" alt="Титульный лист рабочего отчёта" loading="lazy"></a><figcaption>Титульный лист</figcaption></figure>
-              <figure><a href="assets/report-register.png" target="_blank" rel="noopener"><img src="assets/report-register.png" width="1191" height="1684" alt="Реестр замечаний рабочего отчёта" loading="lazy"></a><figcaption>Реестр замечаний</figcaption></figure>
+          <figure class="report-showcase reveal">
+            <div class="report-frame">
+              <img src="assets/report-cover.png" width="1191" height="1684" alt="Титульный лист рабочего отчёта" loading="lazy">
+              <a class="btn btn-primary report-pdf-button" href="output/pdf/sirius-working-report-public.pdf" target="_blank" rel="noopener">Пример отчёта в PDF</a>
             </div>
-            <div class="report-download"><p>PDF, сведения о заказчике и объекте обезличены.</p><a class="btn btn-dark" href="output/pdf/sirius-working-report-public.pdf" target="_blank" rel="noopener">Открыть отчёт PDF</a></div>
-          </article>
+          </figure>
 
           <div class="form-card reveal">
-            <h3>Заказать экспресс-анализ</h3>
-            <p class="form-intro">Укажите параметры комплекта. Мы свяжемся с вами, подтвердим возможность проверки выбранного раздела за один рабочий день и согласуем передачу документации.</p>
+            <h3>Заказать экспресс-аудит</h3>
+            <p class="form-intro">Укажите параметры комплекта. Мы свяжемся с вами, уточним срок экспресс-аудита — от 1 рабочего дня — и согласуем передачу документации.</p>
             <form class="lead-form" id="quick-report-form" action="/api/leads" method="post" data-form-kind="quick_report">
-              <input type="hidden" name="service_code" value="express_analysis">
-              <input type="hidden" name="service_title" value="Экспресс-анализ">
+              <input type="hidden" name="service_code" value="express_audit">
               <div class="honeypot" aria-hidden="true"><label>Не заполняйте <input name="website" tabindex="-1" autocomplete="off"></label></div>
               <div class="form-grid">
                 <div class="field"><label for="qr-name">Имя *</label><input id="qr-name" name="name" autocomplete="name" required></div>
@@ -652,60 +719,6 @@
       </div>
     </section>
 
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Практический опыт</span>
-          <h2>Реализованные объекты</h2>
-          <p>Опыт строительства и интеграции инженерных систем на крупных объектах лежит в основе нашей экспертизы проектных решений.</p>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card reveal">
-            <figure><img src="assets/project-avangard.jpg" width="785" height="588" alt="Индустриальный парк Авангард" loading="lazy"><figcaption>Индустриальный парк «Авангард»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Логистика</span><h3>Промышленный холодильник и склады</h3><p>72 434 м². Энергоснабжение 10/0,4 кВ, КТПН 4 МВт, АПС, СКС, ОПС и пожаротушение.</p></div>
-          </article>
-          <article class="project-card reveal">
-            <figure><img src="assets/project-yakovlev.jpg" width="1051" height="483" alt="Производственный объект ПАО Яковлев" loading="lazy"><figcaption>ПАО «Яковлев»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Авиастроение</span><h3>Производственный центр в Комсомольске-на-Амуре</h3><p>Реконструкция производственных помещений, системы безопасности, СКС, видеонаблюдение и пожаротушение.</p></div>
-          </article>
-          <article class="project-card reveal">
-            <figure><img src="assets/project-solnechnaya.jpg" width="923" height="692" alt="Солнечная обогатительная фабрика" loading="lazy"><figcaption>АО «Оловянная рудная компания»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Горнодобыча</span><h3>Солнечная обогатительная фабрика</h3><p>Цеха, сгустители, дробильные комплексы, ВРУ 6 кВ и технологические сети.</p></div>
-          </article>
-          <article class="project-card reveal">
-            <figure><img src="assets/project-kultura-aerial.jpg" width="917" height="516" alt="Жилой комплекс Культура" loading="lazy"><figcaption>ЖК «Культура»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Жилая недвижимость</span><h3>Жилой дом переменной этажности</h3><p>357 квартир. Системы ОПС, СОУЭ, СКС и АСКУЭ жилого комплекса.</p></div>
-          </article>
-          <article class="project-card reveal">
-            <figure><img src="assets/project-kultura-classica.jpg" width="929" height="522" alt="Жилой комплекс Культура Классика" loading="lazy"><figcaption>ЖК «Азовский» / «Культура.Классика»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Жилая недвижимость</span><h3>Инженерные системы жилых комплексов</h3><p>Электрооборудование, освещение и системы противопожарной защиты.</p></div>
-          </article>
-          <article class="project-card reveal">
-            <figure><img src="assets/project-rakitnoe.jpg" width="1007" height="467" alt="ООО СП Ракитное, Индустриальный парк Авангард" loading="lazy"><figcaption>ООО «СП Ракитное» / Индустриальный парк «Авангард»</figcaption></figure>
-            <div class="project-body"><span class="project-sector">Промышленная инфраструктура</span><h3>Инфраструктура промышленной площадки</h3><p>Инженерные системы индустриального парка, электроснабжение, молниезащита и пожаротушение.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="partners" id="partners">
-      <div class="container">
-        <div class="section-heading center reveal">
-          <span class="section-kicker">Нам доверяют</span>
-          <h2>Заказчики и партнёры</h2>
-          <p>Промышленные предприятия, девелоперы, логистические и инфраструктурные компании.</p>
-        </div>
-        <div class="partner-grid reveal">
-          <div class="partner"><img src="assets/logo-yakovlev.png" width="784" height="197" alt="ПАО Яковлев" loading="lazy"></div>
-          <div class="partner"><img src="assets/logo-gazprom.svg" alt="Газпром" loading="lazy"></div>
-          <div class="partner"><img src="assets/logo-rusolovo.png" width="1000" height="250" alt="Русолово" loading="lazy"></div>
-          <div class="partner"><img src="assets/logo-asz.png" width="347" height="116" alt="Амурский судостроительный завод" loading="lazy"></div>
-          <div class="partner"><img src="assets/logo-ozon.svg" alt="Ozon" loading="lazy"></div>
-          <div class="partner partner-dark"><img src="assets/logo-x5.svg" alt="X5 Group" loading="lazy"></div>
-        </div>
-      </div>
-    </section>
-
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact-layout">
@@ -731,7 +744,7 @@
                 <div class="field"><label for="cs-phone">Телефон</label><input id="cs-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
                 <div class="field"><label for="cs-email">Email</label><input id="cs-email" name="email" type="email" autocomplete="email"></div>
                 <p class="contact-choice-note field full">Укажите телефон или email, чтобы мы могли ответить.</p>
-                <div class="field full"><label for="cs-service">Интересующая услуга *</label><select id="cs-service" name="service_code" required><option value="">Выберите услугу</option><option value="express_analysis">Экспресс-анализ</option><option value="full_audit">Полный технический аудит</option><option value="expertise_preparation">Подготовка к экспертизе</option><option value="project_adaptation">Адаптация проекта</option><option value="value_engineering">Value engineering</option><option value="document_recovery">Восстановление документации</option><option value="contractor_audit">Независимая проверка подрядчика</option><option value="procurement_audit">Аудит перед закупкой</option><option value="as_built_audit">Аудит исполнительной документации</option><option value="other">Другая задача</option></select></div>
+                <div class="field full"><label for="cs-service">Интересующая услуга *</label><select id="cs-service" name="service_code" required><option value="">Выберите услугу</option><option value="express_audit">Экспресс-аудит</option><option value="full_audit">Полный технический аудит</option><option value="project_adaptation">Адаптация проекта</option><option value="contractor_audit">Независимая проверка подрядчика</option><option value="as_built_audit">Аудит исполнительной документации</option><option value="engineering_analysis">Инженерный анализ</option><option value="other">Другая задача</option></select></div>
                 <div class="field"><label for="cs-type">Тип объекта</label><input id="cs-type" name="project_type"></div>
                 <div class="field"><label for="cs-stage">Стадия проекта</label><input id="cs-stage" name="stage" placeholder="П, Р, исполнительная"></div>
                 <div class="field"><label for="cs-volume">Объём</label><input id="cs-volume" name="volume" placeholder="Разделы, листы или файлы"></div>
@@ -752,7 +765,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand"><img src="assets/brand-sirius-wordmark.png" width="910" height="25" alt="Сириус"><p>Инженерные системы, электроснабжение и слаботочные сети с 2008 года. Консалтинговое направление — независимая экспертиза проектной документации.</p></div>
-      <div class="footer-col"><strong>Навигация</strong><a href="#about">О компании</a><a href="#services">Услуги</a><a href="#report">Рабочий отчёт</a><a href="#projects">Объекты</a></div>
+      <div class="footer-col"><strong>Навигация</strong><a href="#about">О компании</a><a href="#services">Услуги</a><a href="#pricing">Стоимость услуг</a><a href="#report">Рабочий отчёт</a></div>
       <div class="footer-col"><strong>Контакты</strong><a href="tel:+74212256265">8 (4212) 256-265</a><a href="tel:+74212256271">8 (4212) 256-271</a><a href="mailto:info@sirius27.ru">info@sirius27.ru</a><a href="https://www.sirius27.ru" target="_blank" rel="noopener">sirius27.ru</a></div>
     </div>
     <div class="footer-bottom"><span>© 2026 ООО «Сириус». Все права защищены.</span><span>г. Хабаровск, Дальний Восток</span></div>
@@ -761,12 +774,14 @@
   <dialog id="service-dialog" aria-labelledby="service-dialog-title">
     <div class="dialog-head"><h2 id="service-dialog-title">Заявка на услугу</h2><button class="dialog-close" type="button">Закрыть</button></div>
     <div class="dialog-body">
-      <p class="form-intro">Укажите основные параметры проекта. Мы уточним задачу и подготовим предложение.</p>
+      <p class="form-intro" id="service-dialog-intro">Укажите основные параметры проекта. Мы уточним задачу и подготовим предложение.</p>
       <form class="lead-form" id="service-form" action="/api/leads" method="post" data-form-kind="service_request">
         <input type="hidden" name="service_code" id="modal-service-code">
         <div class="honeypot" aria-hidden="true"><label>Не заполняйте <input name="website" tabindex="-1" autocomplete="off"></label></div>
         <div class="form-grid">
-          <div class="field full"><label for="modal-service-title">Услуга</label><input id="modal-service-title" name="service_title" readonly></div>
+          <div class="field full"><label for="modal-service-title">Услуга</label><input id="modal-service-title" readonly></div>
+          <div class="field full"><label id="modal-goal-label" for="modal-goal">Цель проверки *</label><select id="modal-goal" data-request-detail required><option value="">Выберите</option></select></div>
+          <div class="field full"><label id="modal-scope-label" for="modal-scope">Что входит в задачу *</label><input id="modal-scope" data-request-detail maxlength="500" required></div>
           <div class="field"><label for="modal-name">Имя *</label><input id="modal-name" name="name" autocomplete="name" required></div>
           <div class="field"><label for="modal-company">Компания</label><input id="modal-company" name="company" autocomplete="organization"></div>
           <div class="field"><label for="modal-phone">Телефон</label><input id="modal-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
@@ -774,9 +789,11 @@
           <p class="contact-choice-note field full">Укажите телефон или email, чтобы мы могли ответить.</p>
           <div class="field"><label for="modal-type">Тип объекта</label><input id="modal-type" name="project_type"></div>
           <div class="field"><label for="modal-stage">Стадия проекта</label><input id="modal-stage" name="stage" placeholder="П, Р, исполнительная"></div>
+          <div class="field"><label for="modal-format">Формат документов</label><select id="modal-format" name="document_format"><option value="">Выберите</option><option>PDF</option><option>PDF и DWG</option><option>DWG, Revit или BIM</option><option>Сканы и изображения</option><option>Смешанный комплект</option><option>Не уверен</option></select></div>
+          <div class="field" id="modal-equipment-wrap" hidden><label for="modal-equipment">Состав оборудования</label><select id="modal-equipment" name="equipment_variety" disabled><option value="">Выберите</option><option>Преимущественно один производитель</option><option>Несколько производителей и систем</option><option>Сильно разнородный состав</option><option>Требуется подбор аналогов</option><option>Не уверен</option></select></div>
           <div class="field"><label for="modal-volume">Объём</label><input id="modal-volume" name="volume" placeholder="Разделы, листы или файлы"></div>
           <div class="field"><label for="modal-deadline">Желаемый срок</label><input id="modal-deadline" name="deadline" type="date"></div>
-          <div class="field full"><label for="modal-message">Кратко о задаче *</label><textarea id="modal-message" name="message" required></textarea></div>
+          <div class="field full"><label for="modal-message">Кратко о задаче *</label><textarea id="modal-message" name="message" maxlength="9000" required></textarea></div>
           <div class="field full"><label class="consent"><input name="consent" type="checkbox" value="accepted" required><span>Согласен на обработку указанных контактных данных для ответа на заявку. *</span></label></div>
         </div>
         <div class="form-actions"><button class="btn btn-dark" type="submit">Отправить заявку</button></div>
@@ -788,8 +805,174 @@
 
   <script>
     (() => {
-      const CONTACT_EMAIL = 'info@sirius27.ru';
       const endpoint = '/api/leads';
+
+      const coreServiceCodes = Object.freeze([
+        'express_audit',
+        'full_audit',
+        'project_adaptation',
+        'contractor_audit',
+        'as_built_audit',
+        'engineering_analysis'
+      ]);
+
+      const serviceCatalog = Object.freeze({
+        express_audit: Object.freeze({
+          title: 'Экспресс-аудит',
+          request: Object.freeze({
+            intro: 'Для экспресс-аудита укажите приоритет проверки и состав разделов. Это поможет сразу направить проект на нужную проверку.',
+            goalLabel: 'Что проверить в первую очередь?',
+            goalOptions: Object.freeze(['Критические ошибки', 'Комплектность и противоречия', 'Спецификацию и оборудование', 'Риски перед монтажом или закупкой', 'Другое']),
+            scopeLabel: 'Разделы или системы для экспресс-аудита',
+            scopePlaceholder: 'Например, АПС, СОУЭ, СКС, ЭОМ',
+            showEquipment: false
+          })
+        }),
+        full_audit: Object.freeze({
+          title: 'Полный технический аудит',
+          request: Object.freeze({
+            intro: 'Для полного аудита укажите цель проверки и какие разделы должны войти в работу.',
+            goalLabel: 'Цель полного аудита',
+            goalOptions: Object.freeze(['До закупки', 'До начала монтажа', 'Перед экспертизой или согласованием', 'Проверка проектировщика', 'Комплексная проверка']),
+            scopeLabel: 'Какие разделы входят в аудит?',
+            scopePlaceholder: 'Например, ЭОМ, СС, АПС, СОУЭ и смежные разделы',
+            showEquipment: true
+          })
+        }),
+        project_adaptation: Object.freeze({
+          title: 'Адаптация проекта',
+          request: Object.freeze({
+            intro: 'Опишите причину адаптации и что в проекте требуется сохранить или изменить.',
+            goalLabel: 'Причина адаптации',
+            goalOptions: Object.freeze(['Замена оборудования или производителя', 'Изменение условий эксплуатации', 'Снижение стоимости', 'Изменение технических требований', 'Изменение исходных данных']),
+            scopeLabel: 'Что нужно сохранить или изменить?',
+            scopePlaceholder: 'Например, заменить производителя без изменения функционала',
+            showEquipment: true
+          })
+        }),
+        contractor_audit: Object.freeze({
+          title: 'Независимая проверка подрядчика',
+          request: Object.freeze({
+            intro: 'Укажите предмет проверки подрядчика и системы или этап работ, которые нужно сверить.',
+            goalLabel: 'Что проверить у подрядчика?',
+            goalOptions: Object.freeze(['Замены оборудования', 'Объёмы и состав работ', 'Соответствие проекту', 'Стоимость и завышение спецификации', 'Качество выполненных решений']),
+            scopeLabel: 'Проверяемые системы или этап работ',
+            scopePlaceholder: 'Например, закупка АПС и СОУЭ, выполненный монтаж',
+            showEquipment: true
+          })
+        }),
+        as_built_audit: Object.freeze({
+          title: 'Аудит исполнительной документации',
+          request: Object.freeze({
+            intro: 'Укажите, какую часть исполнительного комплекта требуется проверить и из чего он состоит.',
+            goalLabel: 'Что требуется проверить?',
+            goalOptions: Object.freeze(['Полнота исполнительной документации', 'Соответствие проекту и изменениям', 'Кабельные журналы', 'Исполнительные схемы', 'Комплект целиком']),
+            scopeLabel: 'Состав исполнительного комплекта',
+            scopePlaceholder: 'Например, схемы, журналы, акты, паспорта и сертификаты',
+            showEquipment: false
+          })
+        }),
+        engineering_analysis: Object.freeze({
+          title: 'Инженерный анализ',
+          request: Object.freeze({
+            intro: 'Укажите цель инженерного анализа и решения, для которых нужно сравнить или оптимизировать варианты.',
+            goalLabel: 'Основная цель анализа',
+            goalOptions: Object.freeze(['Снижение стоимости', 'Упрощение архитектуры', 'Сокращение номенклатуры', 'Повышение надёжности и обслуживаемости', 'Сравнение вариантов']),
+            scopeLabel: 'Системы или решения для анализа',
+            scopePlaceholder: 'Например, архитектура СС, состав оборудования, варианты замены',
+            showEquipment: true
+          })
+        }),
+        recommendation: Object.freeze({ title: 'Не уверен — нужна рекомендация' }),
+        other: Object.freeze({ title: 'Другая задача' })
+      });
+
+      const formContracts = Object.freeze({
+        cost_estimate: Object.freeze({
+          serviceCodes: Object.freeze([...coreServiceCodes, 'recommendation']),
+          requireEmail: true,
+          requireVolume: true,
+          requireMessage: false,
+          recommendationRequiresPhone: true
+        }),
+        quick_report: Object.freeze({
+          serviceCodes: Object.freeze(['express_audit']),
+          requireEmail: false,
+          requireVolume: false,
+          requireMessage: true,
+          recommendationRequiresPhone: false
+        }),
+        consultation: Object.freeze({
+          serviceCodes: Object.freeze([...coreServiceCodes, 'other']),
+          requireEmail: false,
+          requireVolume: false,
+          requireMessage: true,
+          recommendationRequiresPhone: false
+        }),
+        service_request: Object.freeze({
+          serviceCodes: coreServiceCodes,
+          requireEmail: false,
+          requireVolume: false,
+          requireMessage: true,
+          recommendationRequiresPhone: false
+        })
+      });
+
+      const formValue = (form, name) => {
+        const field = form.elements.namedItem(name);
+        return field && typeof field.value === 'string' ? field.value.trim() : '';
+      };
+
+      const invalidFormContract = (message, field = null) => ({ ok: false, message, field });
+
+      const validateFormContract = form => {
+        const contract = formContracts[form.dataset.formKind];
+        if (!contract) return invalidFormContract('Форма временно недоступна.');
+
+        const serviceCode = formValue(form, 'service_code');
+        if (!serviceCatalog[serviceCode] || !contract.serviceCodes.includes(serviceCode)) {
+          const serviceField = form.elements.namedItem('service_code');
+          return invalidFormContract(
+            'Выберите доступную услугу.',
+            serviceField && serviceField.type !== 'hidden' ? serviceField : null
+          );
+        }
+
+        const phone = formValue(form, 'phone');
+        const email = formValue(form, 'email');
+        if (!phone && !email) {
+          return invalidFormContract(
+            'Укажите телефон или email, чтобы мы могли ответить.',
+            form.elements.namedItem('phone') || form.elements.namedItem('email')
+          );
+        }
+        if (contract.requireEmail && !email) {
+          return invalidFormContract(
+            'Укажите email — на него будет отправлен расчёт.',
+            form.elements.namedItem('email')
+          );
+        }
+        if (contract.requireVolume && !formValue(form, 'volume')) {
+          return invalidFormContract(
+            'Укажите объём комплекта для предварительного расчёта.',
+            form.elements.namedItem('volume')
+          );
+        }
+        if (contract.requireMessage && !formValue(form, 'message')) {
+          return invalidFormContract(
+            'Кратко опишите задачу.',
+            form.elements.namedItem('message')
+          );
+        }
+        if (contract.recommendationRequiresPhone && serviceCode === 'recommendation' && !phone) {
+          return invalidFormContract(
+            'Для подбора услуги укажите телефон — специалисту потребуется уточнить задачу.',
+            form.elements.namedItem('phone')
+          );
+        }
+
+        return { ok: true, serviceCode };
+      };
 
       const navToggle = document.querySelector('.nav-toggle');
       const nav = document.querySelector('.site-nav');
@@ -809,17 +992,61 @@
 
       const dialog = document.getElementById('service-dialog');
       const dialogClose = dialog.querySelector('.dialog-close');
+      const serviceForm = document.getElementById('service-form');
+      const serviceDialogIntro = document.getElementById('service-dialog-intro');
       const modalServiceCode = document.getElementById('modal-service-code');
       const modalServiceTitle = document.getElementById('modal-service-title');
+      const modalGoalLabel = document.getElementById('modal-goal-label');
+      const modalGoal = document.getElementById('modal-goal');
+      const modalScopeLabel = document.getElementById('modal-scope-label');
+      const modalScope = document.getElementById('modal-scope');
+      const modalEquipmentWrap = document.getElementById('modal-equipment-wrap');
+      const modalEquipment = document.getElementById('modal-equipment');
       const modalName = document.getElementById('modal-name');
+
+      const applyServiceProfile = serviceCode => {
+        const service = serviceCatalog[serviceCode];
+        const profile = service && service.request;
+        if (!profile) return false;
+
+        serviceDialogIntro.textContent = profile.intro;
+        modalGoalLabel.textContent = `${profile.goalLabel} *`;
+        modalGoal.dataset.requestDetail = profile.goalLabel;
+        modalGoal.replaceChildren(
+          new Option('Выберите', ''),
+          ...profile.goalOptions.map(option => new Option(option, option))
+        );
+        modalGoal.value = '';
+
+        modalScopeLabel.textContent = `${profile.scopeLabel} *`;
+        modalScope.dataset.requestDetail = profile.scopeLabel;
+        modalScope.placeholder = profile.scopePlaceholder;
+        modalScope.value = '';
+
+        modalEquipmentWrap.hidden = !profile.showEquipment;
+        modalEquipment.disabled = !profile.showEquipment;
+        modalEquipment.value = '';
+        return true;
+      };
+
       let dialogTrigger = null;
       document.querySelectorAll('.service-request').forEach(button => {
         button.addEventListener('click', () => {
+          if (serviceForm.dataset.pendingRequest === 'true') {
+            dialogTrigger = button;
+            if (!dialog.open) dialog.showModal();
+            setStatus(serviceForm, 'Сначала подтвердите предыдущую отправку кнопкой «Повторить» или выберите «Изменить данные».', 'error');
+            return;
+          }
+
+          const serviceCode = button.dataset.serviceCode || '';
+          const service = serviceCatalog[serviceCode];
+          if (!service || !coreServiceCodes.includes(serviceCode) || !applyServiceProfile(serviceCode)) return;
           dialogTrigger = button;
-          modalServiceCode.value = button.dataset.serviceCode || '';
-          modalServiceTitle.value = button.dataset.serviceTitle || '';
+          modalServiceCode.value = serviceCode;
+          modalServiceTitle.value = service.title;
           dialog.showModal();
-          requestAnimationFrame(() => modalName.focus());
+          requestAnimationFrame(() => modalGoal.focus());
         });
       });
       dialogClose.addEventListener('click', () => dialog.close());
@@ -830,7 +1057,10 @@
 
       const makeId = () => {
         if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
-        return `lead-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+          return Array.from(window.crypto.getRandomValues(new Uint8Array(16)), value => value.toString(16).padStart(2, '0')).join('');
+        }
+        throw new Error('Secure randomness unavailable');
       };
 
       const setStatus = (form, message, type = '') => {
@@ -842,11 +1072,18 @@
       const buildPayload = (form, requestId) => {
         const values = Object.fromEntries(new FormData(form).entries());
         delete values.website;
+        delete values.service_title;
         values.consent = values.consent === 'accepted';
-        const serviceSelect = form.querySelector('select[name="service_code"]');
-        if (!values.service_title && serviceSelect && serviceSelect.selectedIndex > 0) {
-          values.service_title = serviceSelect.options[serviceSelect.selectedIndex].text;
+        if (!serviceCatalog[values.service_code]) throw new Error('Unknown service identity');
+
+        const requestDetails = Array.from(form.querySelectorAll('[data-request-detail]'))
+          .filter(field => !field.disabled && typeof field.value === 'string' && field.value.trim())
+          .map(field => `${field.dataset.requestDetail}: ${field.value.trim()}`);
+        if (requestDetails.length) {
+          const comment = typeof values.message === 'string' ? values.message.trim() : '';
+          values.message = `Параметры заявки:\n- ${requestDetails.join('\n- ')}${comment ? `\n\nКомментарий:\n${comment}` : ''}`;
         }
+
         return {
           schema_version: 'sirius.intake.v1',
           client_request_id: requestId,
@@ -863,51 +1100,77 @@
         };
       };
 
-      const buildMailto = payload => {
-        const lines = [
-          `Форма: ${payload.form_kind || ''}`,
-          `Услуга: ${payload.service_title || payload.service_code || ''}`,
-          `Имя: ${payload.name || ''}`,
-          `Компания: ${payload.company || ''}`,
-          `Телефон: ${payload.phone || ''}`,
-          `Email: ${payload.email || ''}`,
-          `Тип объекта: ${payload.project_type || ''}`,
-          `Стадия: ${payload.stage || ''}`,
-          `Объём: ${payload.volume || ''}`,
-          `Желаемый срок: ${payload.deadline || ''}`,
-          '',
-          'Задача:',
-          payload.message || ''
-        ];
-        const subject = `Заявка с сайта: ${payload.service_title || payload.service_code || 'консультация'}`;
-        return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
-      };
-
+      let unresolvedForms = 0;
+      window.addEventListener('beforeunload', event => {
+        if (unresolvedForms) { event.preventDefault(); event.returnValue = ''; }
+      });
       document.querySelectorAll('.lead-form').forEach(form => {
+        let pending = null;
+        let busy = false;
+        const button = form.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+        const controls = Array.from(form.querySelectorAll('input, select, textarea'));
+        const initialDisabled = controls.map(control => control.disabled);
+        let disabledBeforePending = null;
+        const abandon = document.createElement('button');
+        abandon.type = 'button';
+        abandon.className = 'btn btn-outline';
+        abandon.textContent = 'Изменить данные';
+        abandon.hidden = true;
+        button.parentElement.append(abandon);
+        const clearPending = () => {
+          if (pending) unresolvedForms -= 1;
+          pending = null;
+          delete form.dataset.pendingRequest;
+          const restoreDisabled = disabledBeforePending || initialDisabled;
+          controls.forEach((control, index) => { control.disabled = restoreDisabled[index]; });
+          disabledBeforePending = null;
+          abandon.hidden = true;
+          button.textContent = originalText;
+        };
+        abandon.addEventListener('click', () => {
+          if (busy || !pending || !confirm('Предыдущая заявка могла быть принята. Новая отправка может создать ещё одну заявку. Продолжить редактирование?')) return;
+          clearPending();
+          setStatus(form, 'Данные можно изменить. Если предыдущая заявка была принята, она не отменена.');
+          form.elements.name.focus();
+        });
         form.addEventListener('submit', async event => {
           event.preventDefault();
+          if (busy) return;
           const fallback = form.querySelector('.fallback');
           fallback.hidden = true;
 
-          if (!form.checkValidity()) {
+          if (!pending && !form.checkValidity()) {
             form.reportValidity();
             setStatus(form, 'Проверьте обязательные поля.', 'error');
             return;
           }
-          const phone = form.elements.phone && form.elements.phone.value.trim();
-          const email = form.elements.email && form.elements.email.value.trim();
-          if (!phone && !email) {
-            setStatus(form, 'Укажите телефон или email, чтобы мы могли ответить.', 'error');
-            (form.elements.phone || form.elements.email).focus();
-            return;
-          }
           if (form.elements.website && form.elements.website.value) return;
 
-          const button = form.querySelector('button[type="submit"]');
-          const originalText = button.textContent;
-          const requestId = makeId();
-          const payload = buildPayload(form, requestId);
+          if (!pending) {
+            const contractCheck = validateFormContract(form);
+            if (!contractCheck.ok) {
+              setStatus(form, contractCheck.message, 'error');
+              if (contractCheck.field && typeof contractCheck.field.focus === 'function') {
+                contractCheck.field.focus();
+              }
+              return;
+            }
+            try {
+              const key = makeId();
+              pending = { key, body: JSON.stringify(buildPayload(form, key)) };
+              unresolvedForms += 1;
+              form.dataset.pendingRequest = 'true';
+              disabledBeforePending = controls.map(control => control.disabled);
+            } catch (_) {
+              setStatus(form, 'Безопасная отправка недоступна в этом браузере.', 'error');
+              return;
+            }
+            controls.forEach(control => { control.disabled = true; });
+          }
+          busy = true;
           button.disabled = true;
+          abandon.hidden = true;
           button.textContent = 'Отправляем…';
           setStatus(form, 'Отправляем заявку…');
 
@@ -919,27 +1182,40 @@
               headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Idempotency-Key': requestId
+                'Idempotency-Key': pending.key
               },
-              body: JSON.stringify(payload),
+              body: pending.body,
               signal: controller.signal
             });
             const contentType = response.headers.get('content-type') || '';
-            if (!response.ok || !contentType.includes('application/json')) throw new Error(`HTTP ${response.status}`);
+            if (response.status >= 400 && response.status < 500 && response.status !== 409) {
+              clearPending();
+              setStatus(form, 'Сервер отклонил запрос. Проверьте данные перед новой отправкой.', 'error');
+              return;
+            }
+            if (response.status !== 202 || !contentType.includes('application/json')) throw new Error('Receipt unavailable');
             const result = await response.json();
-            const accepted = result.ok === true || result.accepted === true || ['accepted', 'created', 'success'].includes(result.status);
+            const number = result.public_request_number;
+            const validNumber = typeof number === 'string' && /^[1-9][0-9]{5}$/.test(number);
+            const legacy = number === null && result.duplicate === true;
+            const accepted = result.ok === true && result.accepted === true && result.status === 'accepted'
+              && result.client_request_id === pending.key && (validNumber || legacy);
             if (!accepted) throw new Error('The endpoint did not confirm receipt');
-            setStatus(form, 'Спасибо. Заявка принята. Мы свяжемся с вами для уточнения задачи.', 'success');
+            const successMessage = validNumber
+              ? `Ваша заявка № ${number}. Сохраните этот номер.`
+              : 'Ранее зарегистрированная заявка подтверждена. Публичный номер недоступен.';
+            clearPending();
+            setStatus(form, successMessage, 'success');
             form.reset();
             fallback.hidden = true;
           } catch (error) {
-            fallback.hidden = false;
-            fallback.querySelector('.fallback-email').href = buildMailto(payload);
-            setStatus(form, 'Заявка не была отправлена через форму.', 'error');
+            setStatus(form, 'Не удалось получить подтверждение сервера. Заявка могла быть принята. Повторите проверку этой же заявки кнопкой «Повторить» и не создавайте новую.', 'error');
+            abandon.hidden = false;
           } finally {
             clearTimeout(timeout);
+            busy = false;
             button.disabled = false;
-            button.textContent = originalText;
+            button.textContent = pending ? 'Повторить' : originalText;
           }
         });
       });
